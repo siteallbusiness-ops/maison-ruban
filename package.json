@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "optimize:images": "node scripts/optimize-public-images.mjs",
     "prepare:floats": "node scripts/prepare-float-images.mjs"
   },
   "engines": {

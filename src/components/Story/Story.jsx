@@ -68,7 +68,7 @@ export default function Story() {
           <ScrollReveal from="left" effect="drift" className={styles.storyVisual}>
             <div className={styles.storyImageFrame}>
               <Image
-                src="/images/hero-accent-macarons.png"
+                src="/images/hero-accent-macarons.webp"
                 width={1200}
                 height={800}
                 alt="Pastel macarons and meringues in glass jars on white painted wood"

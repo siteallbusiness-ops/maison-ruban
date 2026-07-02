@@ -111,7 +111,7 @@ export default function Visit() {
 
             <div className={styles.photoFrame} aria-hidden="true">
               <Image
-                src="/images/hero-atmosphere.png"
+                src="/images/hero-atmosphere.webp"
                 width={1536}
                 height={1024}
                 alt=""
