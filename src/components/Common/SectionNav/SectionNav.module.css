@@ -1,0 +1,265 @@
+.sectionNav {
+  position: fixed;
+  top: 50%;
+  right: max(16px, calc(env(safe-area-inset-right, 0px) + 16px));
+  z-index: 70;
+  transform: translateY(-50%) translateX(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.sectionNavVisible {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+  pointer-events: auto;
+}
+
+.sectionNavList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  transition: gap 0.25s ease;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sectionNav:hover .sectionNavList {
+  gap: 6px;
+}
+
+.sectionNavItem {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sectionNavLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink-soft);
+  transition:
+    color var(--transition),
+    transform var(--transition);
+  padding: 0 0 0 10px;
+  position: relative;
+  height: 8px; /* keeps nav extremely compact */
+  transition:
+    color var(--transition),
+    transform var(--transition),
+    height 0.25s ease;
+}
+
+.sectionNav:hover .sectionNavLink {
+  height: 18px;
+}
+
+.sectionNavLink:hover {
+  text-decoration: none;
+  color: var(--mint-deep);
+  transform: translateX(-2px);
+}
+
+.sectionNavLinkActive {
+  color: var(--raspberry);
+}
+
+.sectionNavLabel {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0;
+  position: absolute;
+  right: calc(30px + 10px); /* tick slot + gap */
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: var(--mint-deep);
+  background: rgba(253, 252, 250, 0.9);
+  border: 1px solid rgba(127, 168, 150, 0.35);
+  box-shadow:
+    0 12px 28px rgba(42, 36, 34, 0.1),
+    0 0 0 1px rgba(216, 238, 228, 0.4) inset;
+  backdrop-filter: blur(14px) saturate(1.2);
+}
+
+.sectionNavLink:hover .sectionNavLabel,
+.sectionNavLinkActive .sectionNavLabel {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.sectionNavLinkActive .sectionNavLabel {
+  color: var(--raspberry);
+  border-color: rgba(179, 36, 75, 0.28);
+  box-shadow:
+    0 12px 28px rgba(179, 36, 75, 0.1),
+    0 0 0 1px rgba(216, 238, 228, 0.5) inset;
+}
+
+.sectionNavTick {
+  position: relative;
+  width: 30px; /* fixed slot so hover doesn't shift layout */
+  height: 2px;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.sectionNavTick::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 2px;
+  width: 10px;
+  border-radius: 999px;
+  background: rgba(127, 168, 150, 0.42);
+  box-shadow: 0 0 0 1px rgba(216, 238, 228, 0.35);
+  transition:
+    width var(--transition),
+    background var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
+}
+
+.sectionNavLink:hover .sectionNavTick::after {
+  width: 16px;
+  background: rgba(127, 168, 150, 0.85);
+  transform: translateX(-1px);
+  box-shadow:
+    0 0 0 1px rgba(216, 238, 228, 0.55),
+    0 6px 16px rgba(127, 168, 150, 0.18);
+}
+
+.sectionNavTickActive::after {
+  width: 24px;
+  background: var(--raspberry);
+  transform: translateX(-1px);
+  box-shadow:
+    0 0 0 1px rgba(216, 238, 228, 0.62),
+    0 0 0 4px rgba(179, 36, 75, 0.14),
+    0 8px 18px rgba(179, 36, 75, 0.18);
+}
+
+/* Desktop-only rail */
+@media (max-width: 1100px) {
+  .sectionNav {
+    display: none;
+  }
+}
+
+/* Mobile / tablet section indicator */
+.sectionNavMobile {
+  position: fixed;
+  left: 50%;
+  bottom: max(14px, calc(10px + env(safe-area-inset-bottom, 0px)));
+  z-index: 70;
+  transform: translateX(-50%) translateY(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.sectionNavMobileVisible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0px);
+  pointer-events: auto;
+}
+
+.sectionNavMobileInner {
+  min-width: min(92vw, 340px);
+  padding: 10px 14px 10px;
+  border-radius: 999px;
+  background: rgba(253, 252, 250, 0.88);
+  border: 1px solid rgba(127, 168, 150, 0.3);
+  box-shadow:
+    0 16px 40px rgba(42, 36, 34, 0.1),
+    0 0 0 1px rgba(216, 238, 228, 0.45) inset;
+  backdrop-filter: blur(18px) saturate(1.2);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  column-gap: 14px;
+  align-items: center;
+}
+
+.sectionNavMobileKicker {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mint-deep);
+}
+
+.sectionNavMobileTitle {
+  grid-column: 1;
+  grid-row: 2;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.05;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.sectionNavMobileDots {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionNavMobileDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--mint);
+  border: 1px solid rgba(127, 168, 150, 0.45);
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.sectionNavMobileDotActive {
+  transform: scale(1.35);
+  background: var(--raspberry);
+  border-color: var(--raspberry-soft);
+  box-shadow:
+    0 0 0 3px rgba(216, 238, 228, 0.5),
+    0 0 0 5px rgba(179, 36, 75, 0.12);
+}
+
+@media (min-width: 1101px) {
+  .sectionNavMobile {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sectionNav,
+  .sectionNavLabel,
+  .sectionNavTick,
+  .sectionNavMobile,
+  .sectionNavMobileDot {
+    transition: none;
+  }
+}

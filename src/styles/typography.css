@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  width: 100%;
+  overflow-x: clip;
+  background-color: #faf6f1;
+  background-image:
+    radial-gradient(ellipse 110% 75% at 50% -18%, rgba(255, 248, 238, 0.95), transparent 52%),
+    radial-gradient(ellipse 48% 42% at -4% 22%, var(--mint-glow), transparent 58%),
+    radial-gradient(ellipse 44% 38% at 104% 12%, var(--blush), transparent 54%),
+    radial-gradient(ellipse 50% 42% at 88% 92%, var(--biscuit-glow), transparent 52%),
+    radial-gradient(ellipse 38% 32% at 12% 85%, var(--raspberry-whisper), transparent 56%),
+    radial-gradient(ellipse 30% 25% at 72% 48%, rgba(216, 238, 228, 0.22), transparent 60%),
+    linear-gradient(172deg, #fefcf9 0%, #faf6f1 32%, #f5efe6 68%, #f8f3ec 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* Scalloped patisserie motif + fine sugar-dot texture */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='48' viewBox='0 0 96 48'%3E%3Cpath d='M0 48 Q24 10 48 48 T96 48' fill='none' stroke='%239cbfb0' stroke-width='0.65' opacity='0.14'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='6' cy='8' r='0.9' fill='%23c6a06a' opacity='0.11'/%3E%3Ccircle cx='22' cy='4' r='0.7' fill='%23b3244b' opacity='0.07'/%3E%3Ccircle cx='34' cy='16' r='0.8' fill='%239cbfb0' opacity='0.09'/%3E%3Ccircle cx='12' cy='28' r='0.65' fill='%23c6a06a' opacity='0.08'/%3E%3Ccircle cx='28' cy='32' r='0.75' fill='%23b3244b' opacity='0.06'/%3E%3C/svg%3E");
+  background-size: 96px 48px, 40px 40px;
+  background-position: 0 0, 0 0;
+  mask-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.35) 45%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+/* Soft vignette + artisan paper grain */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(ellipse 85% 70% at 50% 45%, transparent 42%, rgba(42, 36, 34, 0.045) 100%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.55;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}

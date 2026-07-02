@@ -1,0 +1,30 @@
+:root {
+  --paper: #faf6f1;
+  --paper-2: #f3ece3;
+  --paper-warm: #f7f0e8;
+  --mint: #d8eee4;
+  --mint-deep: #7fa896;
+  --mint-glow: rgba(201, 230, 218, 0.6);
+  --blush: rgba(235, 210, 218, 0.5);
+  --biscuit-glow: rgba(198, 160, 106, 0.18);
+  --raspberry: #b3244b;
+  --raspberry-soft: #d45a7a;
+  --raspberry-whisper: rgba(179, 36, 75, 0.07);
+  --ink: #2a2422;
+  --ink-soft: #5c5550;
+  --biscuit: #c6a06a;
+  --shadow: rgba(42, 36, 34, 0.08);
+  --font-display: var(--font-display-loaded), "Libre Bodoni", "Bodoni MT", Georgia, serif;
+  --font-ui: var(--font-ui-loaded), "Sen", system-ui, sans-serif;
+  --max: 1140px;
+  --scallop: 28px;
+  --primary: var(--raspberry);
+  --secondary: var(--mint-deep);
+  --black: var(--ink);
+  --white: #fff;
+  --text: var(--ink-soft);
+  --heading: var(--ink);
+  --radius: 18px;
+  --transition: 0.2s ease;
+  --header-height: 72px;
+}

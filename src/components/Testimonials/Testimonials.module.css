@@ -1,0 +1,95 @@
+.notesSection {
+  scroll-margin-top: 80px;
+  padding: clamp(56px, 9vh, 96px) 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 18%,
+    rgba(235, 210, 218, 0.12) 52%,
+    transparent 100%
+  );
+}
+
+.notesIntro {
+  max-width: 42rem;
+  margin: 0 auto clamp(28px, 4.5vw, 48px);
+  text-align: center;
+}
+
+.notesLead {
+  margin: 10px auto 0;
+  max-width: 54ch;
+  font-size: clamp(1rem, 1.35vw, 1.06rem);
+  line-height: 1.72;
+  color: var(--ink-soft);
+}
+
+.notesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2.2vw, 22px);
+}
+
+.noteCard {
+  height: 100%;
+}
+
+.noteFigure {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 22px 22px 20px;
+  border-radius: 22px;
+  background: rgba(253, 252, 250, 0.72);
+  border: 1px solid rgba(127, 168, 150, 0.22);
+  box-shadow:
+    0 26px 60px rgba(42, 36, 34, 0.07),
+    0 0 0 1px rgba(255, 255, 255, 0.55) inset;
+  backdrop-filter: blur(14px) saturate(1.2);
+  overflow: hidden;
+}
+
+.noteHighlight {
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  background: radial-gradient(
+    circle at 18% 14%,
+    rgba(216, 238, 228, 0.6),
+    transparent 52%
+  );
+  transform-origin: left center;
+}
+
+.noteQuote {
+  position: relative;
+  margin: 0 0 18px;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.4vw, 1.18rem);
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.noteCaption {
+  position: relative;
+  height: 1px;
+  width: min(120px, 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(127, 168, 150, 0.45),
+    rgba(179, 36, 75, 0.28),
+    rgba(127, 168, 150, 0.25)
+  );
+  border-radius: 999px;
+}
+
+@media (max-width: 992px) {
+  .notesGrid {
+    grid-template-columns: 1fr;
+    max-width: 34rem;
+    margin-inline: auto;
+  }
+}
+

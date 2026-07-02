@@ -1,0 +1,122 @@
+.storySection {
+  scroll-margin-top: 80px;
+  padding: clamp(56px, 9vh, 96px) 0;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+
+.storyVisual {
+  position: relative;
+  max-width: 520px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.storyImageFrame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 24px 32px 20px 28px;
+  overflow: hidden;
+  box-shadow:
+    0 32px 72px rgba(42, 36, 34, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.75);
+}
+
+.storyImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.storyImageVeil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, transparent 50%, rgba(42, 36, 34, 0.12) 100%);
+  pointer-events: none;
+}
+
+.storyQuote {
+  margin: 20px 0 0;
+  padding: 18px 22px;
+  border-left: 3px solid var(--raspberry);
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 0 14px 14px 0;
+  backdrop-filter: blur(8px);
+}
+
+.storyQuote p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.storyContent {
+  max-width: 34rem;
+}
+
+.storyLead {
+  margin: 0 0 28px;
+  font-size: clamp(1rem, 1.35vw, 1.08rem);
+  line-height: 1.78;
+  color: var(--ink-soft);
+}
+
+.storyPillars {
+  display: grid;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(42, 36, 34, 0.1);
+}
+
+.storyPillar {
+  display: grid;
+  gap: 6px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(42, 36, 34, 0.08);
+}
+
+.storyPillarTitle {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.storyPillarDetail {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 992px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .storyVisual {
+    order: -1;
+  }
+
+  .storyContent {
+    max-width: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .storyImageFrame {
+    aspect-ratio: 16 / 11;
+  }
+}

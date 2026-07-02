@@ -1,0 +1,147 @@
+.gallerySection {
+  padding: clamp(64px, 10vh, 96px) 0 clamp(72px, 12vh, 112px);
+  scroll-margin-top: 80px;
+}
+
+.galleryIntroWrap {
+  max-width: 42rem;
+  margin: 0 auto clamp(36px, 6vw, 64px);
+  text-align: center;
+}
+
+.galleryIntro {
+  margin: 0 auto;
+  max-width: 52ch;
+  font-size: clamp(1rem, 1.4vw, 1.06rem);
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.scrollList {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vh, 48px);
+}
+
+.scrollItem {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+  padding: clamp(20px, 3vh, 40px) 0;
+}
+
+.visualPanel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: clamp(280px, 34vw, 400px);
+}
+
+.detailPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(8px, 1.5vw, 16px) 0;
+}
+
+.itemNumber {
+  display: block;
+  margin-bottom: 16px;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1;
+  color: rgba(179, 36, 75, 0.18);
+  font-weight: 700;
+}
+
+.itemCategory {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mint-deep);
+}
+
+.itemTitle {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+  line-height: 1.12;
+  color: var(--ink);
+}
+
+.itemCaption {
+  margin: 0 0 18px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--raspberry);
+}
+
+.itemDescription {
+  margin: 0 0 24px;
+  max-width: 40ch;
+  font-size: clamp(1rem, 1.3vw, 1.06rem);
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+
+.itemTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.itemTag {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(155, 191, 176, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+@media (max-width: 992px) {
+  .scrollItem {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: clamp(16px, 2.5vh, 28px) 0;
+  }
+
+  .visualPanel {
+    order: -1;
+    min-height: clamp(240px, 52vw, 340px);
+  }
+
+  .detailPanel {
+    padding-top: 0;
+  }
+
+  .itemNumber {
+    font-size: 2.25rem;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallerySection {
+    padding-top: 48px;
+  }
+
+  .scrollList {
+    gap: 24px;
+  }
+}

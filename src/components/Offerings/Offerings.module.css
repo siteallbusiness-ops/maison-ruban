@@ -1,0 +1,115 @@
+.offeringsSection {
+  scroll-margin-top: 80px;
+  padding: clamp(48px, 8vh, 80px) 0 clamp(56px, 9vh, 88px);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 18%,
+    rgba(216, 238, 228, 0.12) 50%,
+    transparent 100%
+  );
+}
+
+.offeringsIntro {
+  max-width: 38rem;
+  margin: 0 auto clamp(36px, 5vw, 56px);
+  text-align: center;
+}
+
+.offeringsLead {
+  margin: 12px auto 0;
+  max-width: 48ch;
+  font-size: clamp(1rem, 1.35vw, 1.06rem);
+  line-height: 1.72;
+  color: var(--ink-soft);
+}
+
+.offeringsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2.5vw, 24px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.offeringCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: clamp(24px, 3vw, 32px);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(155, 191, 176, 0.28);
+  box-shadow: 0 16px 48px rgba(42, 36, 34, 0.06);
+  backdrop-filter: blur(10px);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.offeringCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(179, 36, 75, 0.18);
+  box-shadow: 0 24px 56px rgba(42, 36, 34, 0.09);
+}
+
+.offeringNumber {
+  display: block;
+  margin-bottom: 14px;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(179, 36, 75, 0.16);
+}
+
+.offeringTitle {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.offeringDetail {
+  flex: 1;
+  margin: 0 0 18px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.offeringTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.offeringTag {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mint-deep);
+  background: rgba(216, 238, 228, 0.45);
+  border: 1px solid rgba(155, 191, 176, 0.35);
+}
+
+@media (max-width: 768px) {
+  .offeringsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .offeringCard {
+    padding: 22px 20px;
+  }
+}

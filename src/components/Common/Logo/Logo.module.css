@@ -1,0 +1,68 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+
+.logoMark {
+  flex-shrink: 0;
+  display: block;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  line-height: 1.05;
+}
+
+.logoName {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.4vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  color: var(--ink);
+}
+
+.logoSub {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--mint-deep);
+}
+
+.logoNameFooter {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  color: #fff;
+}
+
+.logoSubFooter {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mint-deep);
+}
+
+.logoFooter:hover .logoNameFooter {
+  color: var(--mint);
+}
+
+@media (max-width: 576px) {
+  .logo {
+    gap: 12px;
+  }
+
+  .logoMark {
+    width: 34px;
+    height: 34px;
+  }
+}

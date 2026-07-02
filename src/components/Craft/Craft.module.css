@@ -1,0 +1,133 @@
+.craftSection {
+  scroll-margin-top: 80px;
+  padding: clamp(40px, 7vh, 72px) 0;
+}
+
+.craftIntro {
+  max-width: 32rem;
+  margin: 0 auto clamp(32px, 5vw, 48px);
+  text-align: center;
+}
+
+.craftEyebrow {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--raspberry);
+}
+
+.craftHeading {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+  line-height: 1.15;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.craftSteps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 32px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: craft;
+}
+
+.craftStep {
+  position: relative;
+  padding: clamp(24px, 3vw, 32px) clamp(20px, 2.5vw, 28px);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(42, 36, 34, 0.08);
+  text-align: center;
+}
+
+.craftStepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--raspberry);
+  background: rgba(179, 36, 75, 0.08);
+  border: 1px solid rgba(179, 36, 75, 0.15);
+}
+
+.craftStepTitle {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.6vw, 1.3rem);
+  color: var(--ink);
+}
+
+.craftStepDetail {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.quoteBand {
+  margin: clamp(32px, 5vh, 48px) 0 clamp(40px, 6vh, 64px);
+  padding: clamp(40px, 6vh, 56px) 0;
+  background: linear-gradient(
+    135deg,
+    rgba(42, 36, 34, 0.96) 0%,
+    rgba(58, 42, 44, 0.98) 50%,
+    rgba(42, 36, 34, 0.96) 100%
+  );
+  background-size: 160% 160%;
+  border-block: 1px solid rgba(198, 160, 106, 0.2);
+}
+
+.quoteInner {
+  max-width: 44rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.quoteBlock {
+  margin: 0;
+}
+
+.quoteText {
+  margin: 0 0 18px;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.92);
+  text-wrap: balance;
+}
+
+.quoteAttribution {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mint);
+}
+
+@media (max-width: 768px) {
+  .craftSteps {
+    grid-template-columns: 1fr;
+    max-width: 28rem;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .quoteText {
+    font-size: 1.25rem;
+  }
+}
